@@ -1,0 +1,14 @@
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\Console Final app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\Console Final app.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\Console Final app.AssemblyInfo.cs
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\Console Final app.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\bin\Debug\net6.0\Console Final app.exe
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\bin\Debug\net6.0\Console Final app.deps.json
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\bin\Debug\net6.0\Console Final app.runtimeconfig.json
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\bin\Debug\net6.0\Console Final app.dll
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\bin\Debug\net6.0\Console Final app.pdb
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\Console Final app.dll
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\refint\Console Final app.dll
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\Console Final app.pdb
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\Console Final app.genruntimeconfig.cache
+C:\Users\User\Desktop\Console Final\Console Final app\Console Final app\obj\Debug\net6.0\ref\Console Final app.dll
