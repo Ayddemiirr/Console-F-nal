@@ -43,7 +43,7 @@ namespace ConsoleApp1.Services.Concrete
         {
             try
             {
-                Console.WriteLine("Please write product Id which you want to update");
+                Console.WriteLine("Please type the product ID you want to update");
                 string ProductID = Console.ReadLine();
                 int.TryParse(ProductID, out int ID);
 
@@ -62,7 +62,6 @@ namespace ConsoleApp1.Services.Concrete
                 Categories Newcategories = (Categories)Enum.Parse(typeof(Categories), Console.ReadLine(), true);
                 marketServices.UpdateProduct(NewName, NewPriceProduct, NewCountProduct, Newcategories, ID);
                 Console.WriteLine("Product Updated Successfully");
-
             }
             catch (Exception ex)
             {
@@ -74,11 +73,11 @@ namespace ConsoleApp1.Services.Concrete
         {
             try
             {
-                Console.WriteLine("Please write Product Id which you want to ddelete");
+                Console.WriteLine("Please write Product Id which you want to delete");
                 string ProductID = Console.ReadLine();
                 int.TryParse(ProductID, out int ID);
                 marketServices.DeleteProduct(ID);
-                Console.WriteLine("product deleted successfully");
+                Console.WriteLine("Product Deleted Successfully");
             }
             catch (Exception ex)
             {
@@ -107,11 +106,11 @@ namespace ConsoleApp1.Services.Concrete
         {
             try
             {
-                Console.WriteLine("Please write minimum Price");
+                Console.WriteLine("Please Enter minimum Price");
                 string minimum = Console.ReadLine();
                 decimal minimumPrice = decimal.Parse(minimum);
 
-                Console.WriteLine("Please write maximum Price");
+                Console.WriteLine("Please Enter maximum Price");
                 string maximum = Console.ReadLine();
                 decimal maximumPrice = decimal.Parse(maximum);
 
@@ -127,9 +126,37 @@ namespace ConsoleApp1.Services.Concrete
                 Console.WriteLine($"Oops, got an error: {ex.Message}");
             }
         }
+        public static void MenuGetSalesForPriceInteerval()
+        {
+            try
+            {
+                Console.WriteLine("Please Enter minimum Price");
+                string minimum = Console.ReadLine();
+                decimal minimumPrice = decimal.Parse(minimum);
+
+                Console.WriteLine("Please Enter maximum Price");
+                string maximum = Console.ReadLine();
+                decimal maximumPrice = decimal.Parse(maximum);
+
+                var SalesPriceInterval = marketServices.GetSalesForPriceInterval(minimumPrice, maximumPrice);
+                foreach (var item in SalesPriceInterval)
+                {
+                    Console.WriteLine($"{item.Id},{item.Price},{item.Date}");
+                    foreach (var saleitem in item.Salesİtem)
+                    {
+                        Console.WriteLine($"{saleitem.Product.Name},{saleitem.SaleItemCount}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine($"Oops, got an error: {ex.Message}");
+            }
+        }
         public static void MenuGetProductsByCategory()
         {
-            Console.WriteLine("Please choose the  Category Name");
+            Console.WriteLine("Please choose the Category Name");
             foreach (Categories categoryy in Enum.GetValues(typeof(Categories)))
             {
                 Console.WriteLine($"{categoryy}");
@@ -146,14 +173,13 @@ namespace ConsoleApp1.Services.Concrete
         {
             try
             {
-                Console.WriteLine("Please write the text for search");
+                Console.WriteLine("Please enter the text for search");
                 string ProductSearch = Console.ReadLine();
                 var Search = marketServices.GetProductsByName(ProductSearch);
                 foreach (var item in Search)
                 {
                     Console.WriteLine($"{item.Id},{item.Name},{item.Price},{item.Categories},{item.Count}");
                 }
-
             }
             catch (Exception ex)
             {
@@ -165,21 +191,20 @@ namespace ConsoleApp1.Services.Concrete
         {
             try
             {
-                Console.WriteLine("Please write which sale you want to update ");
+                Console.WriteLine("Please enter which sale you want to update ");
                 string saleIdsInput = Console.ReadLine();
                 int.TryParse(saleIdsInput, out int saleId);
 
-                Console.WriteLine("Please write which product you want to return");
+                Console.WriteLine("Please enter which product you want to return");
                 string productIdsInput = Console.ReadLine();
                 int.TryParse(productIdsInput, out int productId);
 
-                Console.WriteLine("Please write how many product you want to return");
+                Console.WriteLine("Please enter how many product you want to return");
                 string productCountInput = Console.ReadLine();
                 int.TryParse(productCountInput, out int productCount);
 
                 marketServices.ReturnProductFromSale(saleId, productId, productCount);
                 Console.WriteLine("Product returned successfully");
-
 
             }
             catch (Exception ex)
@@ -192,12 +217,13 @@ namespace ConsoleApp1.Services.Concrete
         {
             try
             {
-                Console.WriteLine("Please write Sale Id which you want to delete");
+                Console.WriteLine("Please enter Sale Id which you want to delete");
                 string SaleID = Console.ReadLine();
                 int.TryParse(SaleID, out int ID);
                 marketServices.DeleteSale(ID);
                 Console.WriteLine("Sale deleted successfully");
             }
+
             catch (Exception ex)
             {
 
@@ -244,7 +270,6 @@ namespace ConsoleApp1.Services.Concrete
                     foreach (var saleitem in item.Salesİtem)
                     {
                         Console.WriteLine($"{saleitem.Product.Name},{saleitem.SaleItemCount}");
-
                     }
                 }
             }
@@ -259,35 +284,6 @@ namespace ConsoleApp1.Services.Concrete
             try
             {
 
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine($"Oops, got an error: {ex.Message}");
-            }
-        }
-        public static void MenuGetSalesForPriceInteerval()
-        {
-            try
-            {
-                Console.WriteLine("Please write minimum Price");
-                string minimum = Console.ReadLine();
-                decimal minimumPrice = decimal.Parse(minimum);
-
-                Console.WriteLine("Please write maximum Price");
-                string maximum = Console.ReadLine();
-                decimal maximumPrice = decimal.Parse(maximum);
-
-                var SalesPriceInterval = marketServices.GetSalesForPriceInterval(minimumPrice, maximumPrice);
-                foreach (var item in SalesPriceInterval)
-                {
-                    Console.WriteLine($"{item.Id},{item.Price},{item.Date}");
-                    foreach (var saleitem in item.Salesİtem)
-                    {
-                        Console.WriteLine($"{saleitem.Product.Name},{saleitem.SaleItemCount}");
-
-                    }
-                }
             }
             catch (Exception ex)
             {
@@ -323,7 +319,7 @@ namespace ConsoleApp1.Services.Concrete
             try
             {
 
-                Console.WriteLine("Please write which sale you want to see ");
+                Console.WriteLine("Please Enter which sale you want to see ");
                 string saleIdsInput = Console.ReadLine();
                 int.TryParse(saleIdsInput, out int saleId);
 
@@ -361,14 +357,11 @@ namespace ConsoleApp1.Services.Concrete
                     foreach (var saleitem in item.Salesİtem)
                     {
                         Console.WriteLine($"{saleitem.Product.Name},{saleitem.SaleItemCount}");
-
                     }
                 }
-
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine($"Oops, got an error: {ex.Message}");
             }
         }

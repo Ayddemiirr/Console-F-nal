@@ -58,7 +58,7 @@ namespace ConsoleApp1
                         MenuServices.MenuFindProductName();
                         break;
                     case 0:
-                        Console.WriteLine("Good bye!");
+                        Console.WriteLine("Bye!");
                         break;
                     default:
                         Console.WriteLine("There is no such option!");
@@ -66,7 +66,6 @@ namespace ConsoleApp1
                 }
             } while (option != 0);
         }
-
         public static void SalesSubMenu()
         {
             int option;
@@ -84,7 +83,6 @@ namespace ConsoleApp1
                 Console.WriteLine("------------------------");
                 Console.WriteLine("Please, select an option:");
                 Console.WriteLine("------------------------");
-
 
                 while (!int.TryParse(Console.ReadLine(), out option))
                 {

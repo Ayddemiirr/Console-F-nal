@@ -12,14 +12,13 @@ namespace ConsoleApp1.Data.Models
     public class Sales : BaseEntity
     {
         private static int count = 1;
-
         public Sales()
         {
             Id = count;
             count++;
         }
-        public decimal Price { get; set; }
         public List<SalesItem> Salesİtem { get; set; }
+        public decimal Price { get; set; }
         public DateTime Date { get; set; }
     }
 }

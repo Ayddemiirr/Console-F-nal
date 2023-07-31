@@ -10,13 +10,11 @@ namespace ConsoleApp1.Data.Models
     public class SalesItem : BaseEntity
     {
         private static int count = 1;
-
         public SalesItem()
         {
             Id = count;
             count++;
         }
-
         public Product Product { get; set; }
         public int SaleItemCount { get; set; }
     }
